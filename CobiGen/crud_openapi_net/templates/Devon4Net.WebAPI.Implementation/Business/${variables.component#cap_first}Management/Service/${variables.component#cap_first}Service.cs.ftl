@@ -28,7 +28,7 @@ namespace Devon4Net.WebAPI.Implementation.Business.${variables.component?cap_fir
             Devon4NetLogger.Debug($"Get${variables.entityName?cap_first}ById method from service ${variables.entityName?cap_first}Service with value : {id}");
             var ${variables.entityName?uncap_first} = await _${variables.entityName}Repository.Get${variables.entityName?cap_first}ById(id).ConfigureAwait(false);
             
-            throw new NotImplementedException("TODO: Please Convert ${variables.entityName?uncap_first} entity to ${variables.entityName?uncap_first}Dto");
+            //TODO: return value: convert ${variables.entityName?uncap_first} entity to ${variables.entityName?uncap_first}Dto
         }
 
         public async Task<${variables.entityName?cap_first}Dto> Create${variables.entityName?cap_first}(${variables.entityName?cap_first}Dto ${variables.entityName?uncap_first}){
@@ -38,7 +38,7 @@ namespace Devon4Net.WebAPI.Implementation.Business.${variables.component?cap_fir
             Devon4NetLogger.Debug($"Set${variables.entityName?cap_first} method from service ${variables.entityName?cap_first}Service");
             var ${variables.entityName?uncap_first}Result = await _${variables.entityName}Repository.Set${variables.entityName?cap_first}().ConfigureAwait(false);
             
-            throw new NotImplementedException("TODO: Please Convert ${variables.entityName?uncap_first}Result entity to ${variables.entityName?uncap_first}Dto");
+            //TODO: return value: convert ${variables.entityName?uncap_first} entity to ${variables.entityName?uncap_first}Dto
         }
 
         public async Task<long> Delete${variables.entityName?cap_first}ById(long id){
@@ -63,7 +63,7 @@ namespace Devon4Net.WebAPI.Implementation.Business.${variables.component?cap_fir
             Devon4NetLogger.Debug("Get${variables.entityName?cap_first} method from service ${variables.entityName?cap_first}Service");
             var ${variables.entityName?uncap_first}s = await _${variables.entityName}Repository.Get${variables.entityName?cap_first}(predicate).ConfigureAwait(false);
             
-            throw new NotImplementedException("TODO: Please Convert ${variables.entityName?uncap_first} entity to ${variables.entityName?uncap_first}Dto");
+            //TODO: return value: convert ${variables.entityName?uncap_first} entity to ${variables.entityName?uncap_first}Dto
         }
     }
 }

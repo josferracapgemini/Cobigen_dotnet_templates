@@ -22,9 +22,9 @@ namespace Devon4Net.WebAPI.Implementation.Business.${variables.component?cap_fir
         ///  Get ${variables.entityName?cap_first}
         /// </summary>
         /// <param name="id"></param>
-        /// <response code="201">Ok.</response>
+        /// <response code="200">Ok.</response>
         /// <response code="400">Bad request. Parser data error.</response>
-        /// <response code="403">Forbidden. Authorization error.</response>
+        /// <response code="404">Forbidden. Authorization error.</response>
         /// <response code="500">Internal Server Error. The search process ended with error.</response>
         [HttpGet]
         [Route("/${variables.entityName?lower_case}/{id}/")]
@@ -42,9 +42,9 @@ namespace Devon4Net.WebAPI.Implementation.Business.${variables.component?cap_fir
         ///  Create ${variables.entityName?cap_first}
         /// </summary>
         /// <param name="${variables.entityName}Dto"></param>
-        /// <response code="201">Ok.</response>
+        /// <response code="200">Ok.</response>
         /// <response code="400">Bad request. Parser data error.</response>
-        /// <response code="403">Forbidden. Authorization error.</response>
+        /// <response code="404">Forbidden. Authorization error.</response>
         /// <response code="500">Internal Server Error. The search process ended with error.</response>
         [HttpPost]
         [Route("/${variables.entityName?lower_case}/")]
@@ -62,9 +62,9 @@ namespace Devon4Net.WebAPI.Implementation.Business.${variables.component?cap_fir
         ///  Delete ${variables.entityName?cap_first}
         /// </summary>
         /// <param name="id"></param>
-        /// <response code="201">Ok.</response>
+        /// <response code="200">Ok.</response>
         /// <response code="400">Bad request. Parser data error.</response>
-        /// <response code="403">Forbidden. Authorization error.</response>
+        /// <response code="404">Forbidden. Authorization error.</response>
         /// <response code="500">Internal Server Error. The search process ended with error.</response>
         [HttpDelete]
         [Route("/${variables.entityName?lower_case}/{id}/")]
@@ -82,9 +82,9 @@ namespace Devon4Net.WebAPI.Implementation.Business.${variables.component?cap_fir
         ///  Get all ${variables.entityName?cap_first}
         /// </summary>
         /// <param name="id"></param>
-        /// <response code="201">Ok.</response>
+        /// <response code="200">Ok.</response>
         /// <response code="400">Bad request. Parser data error.</response>
-        /// <response code="403">Forbidden. Authorization error.</response>
+        /// <response code="404">Forbidden. Authorization error.</response>
         /// <response code="500">Internal Server Error. The search process ended with error.</response>
         [HttpGet]
         [Route("/${variables.entityName?lower_case}/search/")]
@@ -108,9 +108,9 @@ namespace Devon4Net.WebAPI.Implementation.Business.${variables.component?cap_fir
         /// <summary>
         /// </summary>
         /// <param name="<#if parameter.isEntity>${parameter.type}Dto<#elseif parameter.type == "integer">int<#elseif parameter.type == "number">long</#if>"></param>
-        /// <response code="201">Ok.</response>
+        /// <response code="200">Ok.</response>
         /// <response code="400">Bad request. Parser data error.</response>
-        /// <response code="403">Forbidden. Authorization error.</response>
+        /// <response code="404">Forbidden. Authorization error.</response>
         /// <response code="500">Internal Server Error. The search process ended with error.</response>
         [Http${operation.type?cap_first}]
         [Route("${path.pathURI}")]
