@@ -65,7 +65,7 @@ image::images/Project_selection.png["cobigen", width="600", link="images/Project
 Next we copy our OpenAPI file into the root folder of the project.
 
 [[img-cobigen]]
-image::images/OpenAPI_file_root_folder.png["cobigen", width="450", link="images/OpenAPI_file_root_folder.png"]
+image::images/OpenAPI_file_root_folder.png["cobigen", width="300", link="images/OpenAPI_file_root_folder.png"]
 
 And then we right click on OpenAPI file and then select *CobiGen > Generate...* It will display a window like this:
 
@@ -79,6 +79,26 @@ image::images/cobigen_generate1.png["cobigen", width="800", link="images/cobigen
 
 Ones you select all the files that you want to generate, click on the _“Finish”_ button to generate all the source code.
 
+
+= a
+
+At this point it is needed to make some modifications in the code in order to configure correctly the server. To do so it is needed to locate the services and the repositories files that were created in *Devon4Net.WebAPI.Implementation*
+
+Services location:
+[[img-cobigen]]
+image::images/Services.png["cobigen", width="300", link="images/Services.png]
+
+Repositories location:
+[[img-cobigen]]
+image::images/Repositories.png["cobigen", width="300", link="images/Repositories.png]
+
+Now, we are going to open the following file *Devon4Net.WebAPI.Implementation\Configure\DevonConfiguration.cs*.
+In there we have to add the Dependency Inyection for the services and the repositories that Cobigen has generated. The following image is an example of what is needed to add.
+
+[[img-cobigen]]
+image::images/BussinessConfiguration.png["cobigen", width="800", link="images/BussinessConfiguration.png]
+
+
 After that, we open a terminal in the *[Project_Name]/Devon4Net.Application.WebAPI* and then type:
 
 	dotnet run
@@ -87,15 +107,19 @@ This will deploy our application in our localhost with the port 8081, so when yo
 
 == [navy]#Finishing touches#
 
-After generating the files, locate the services created in *Devon4Net.Business.Common*
+After generating the files, locate the services and the repositories created in *Devon4Net.Business.Common*
 
+Services location:
 [[img-cobigen]]
 image::images/Services.png["cobigen", width="300", link="images/Services.png]
 
+Repositories location:
+[[img-cobigen]]
+image::images/Repositories.png["cobigen", width="300", link="images/Repositories.png]
+
+
 Once you have find these you have to import them and add them into the _AddBusinessCommonDependencyInjectionService_ method found in *Bussiness/Devon4Net.Business.Common/Configuration/BusinessCommonConfiguration.cs*
 
-[[img-cobigen]]
-image::images/BussinessCommonConfiguration.png["cobigen", width="800", link="images/BussinessCommonConfiguration.png]
 
 
 	

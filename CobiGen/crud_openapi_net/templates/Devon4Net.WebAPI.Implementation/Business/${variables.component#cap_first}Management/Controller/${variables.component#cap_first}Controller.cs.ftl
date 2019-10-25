@@ -28,7 +28,7 @@ namespace Devon4Net.WebAPI.Implementation.Business.${variables.component?cap_fir
         /// <response code="500">Internal Server Error. The search process ended with error.</response>
         [HttpGet]
         [Route("/${variables.entityName?lower_case}/{id}/")]
-        [ProducesResponseType(200)]
+        [ProducesResponseType(typeof(${variables.entityName?cap_first}Dto), 200)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
@@ -48,7 +48,7 @@ namespace Devon4Net.WebAPI.Implementation.Business.${variables.component?cap_fir
         /// <response code="500">Internal Server Error. The search process ended with error.</response>
         [HttpPost]
         [Route("/${variables.entityName?lower_case}/")]
-        [ProducesResponseType(200)]
+        [ProducesResponseType(typeof(${variables.entityName?cap_first}Dto), 200)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
@@ -68,7 +68,7 @@ namespace Devon4Net.WebAPI.Implementation.Business.${variables.component?cap_fir
         /// <response code="500">Internal Server Error. The search process ended with error.</response>
         [HttpDelete]
         [Route("/${variables.entityName?lower_case}/{id}/")]
-        [ProducesResponseType(200)]
+        [ProducesResponseType(typeof(long), 200)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
@@ -88,7 +88,7 @@ namespace Devon4Net.WebAPI.Implementation.Business.${variables.component?cap_fir
         /// <response code="500">Internal Server Error. The search process ended with error.</response>
         [HttpGet]
         [Route("/${variables.entityName?lower_case}/search/")]
-        [ProducesResponseType(200)]
+        [ProducesResponseType(typeof(List<${variables.entityName?cap_first}Dto>), 200)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]

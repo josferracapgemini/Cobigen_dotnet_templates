@@ -17,6 +17,9 @@ namespace Devon4Net.WebAPI.Implementation.Domain.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //TO-DO: Create here your model and entity requirements
+            //Please read the following documentation to get more information: 
+            //https://docs.microsoft.com/en-us/ef/core/miscellaneous/configuring-dbcontext
         }
     }
 }
