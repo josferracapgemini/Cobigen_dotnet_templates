@@ -54,8 +54,11 @@ It is obligatory to put the _“x-rootpackage”_ tag to indicate where CobiGen 
 You can read more information about how to configure your OpenAPI file and a working example https://github.com/devonfw/tools-cobigen/wiki/cobigen-openapiplugin#full-example[here].
 
 == [navy]#Generating files#
-	
-In order to generate the files we need to follow some simple steps.
+
+Cobigen allow us to generate the files in two different ways. One of them is using Eclipse which it can be done by using the its grafical interface. The other way to generate the code is using the Cobigen CLI tool.
+
+=== [navy]#Generating files throug Eclipse#
+In order to generate the files using Eclipse we need to follow some simple steps.
 
 First we are going to import our basic devon4net WebAPI Project into Eclipse. to do so open Eclipse with the “eclipse-main.bat” file that can be found in the devon distribution root folder. Once we are inside of Eclipse we go to *File > Open projects from file system...* and, under "Directory", search for your project.
 
@@ -79,8 +82,16 @@ image::images/cobigen_generate1.png["cobigen", width="800", link="images/cobigen
 
 Ones you select all the files that you want to generate, click on the _“Finish”_ button to generate all the source code.
 
+=== [navy]#Generating files throug Cobigen CLI#
 
-= a
+In ordet to generate the files using the Cobigen CLI it is needed to do the following steps:
+
+
+
+
+== [navy]#Configuration#
+
+=== [navy]#Dependency Inyection configuration#
 
 At this point it is needed to make some modifications in the code in order to configure correctly the server. To do so it is needed to locate the services and the repositories files that were created in *Devon4Net.WebAPI.Implementation*
 
@@ -99,26 +110,39 @@ In there we have to add the Dependency Inyection for the services and the reposi
 image::images/BussinessConfiguration.png["cobigen", width="800", link="images/BussinessConfiguration.png]
 
 
-After that, we open a terminal in the *[Project_Name]/Devon4Net.Application.WebAPI* and then type:
+Moreover it is needed to remove the last line in order to be able to run the application:
+
+	throw new NotImplementedException(...);
+
+=== [navy]#Configure data base#
+
+Cobigen is generating an empty context that has to be filled with manualy in order to be able to work with the database. The context can be found in *[Project_Name]/Devon4Net.WebAPI.Implementation/Domain/Database/CobigenContext.cs*.
+
+[[img-cobigen]]
+image::images/CobigenContextLocation.png["cobigen", width="350", link="images/CobigenContextLocation.png]
+
+
+=== [navy]#Configure services#
+
+In order to finish the configuration of the services it is needed to go to the each service file of the managements generated. 
+
+In there we will see some "NotImplementedExceptions", so it is needed to read carefuly each coment inside of each exception in order to be able to use the service. It can be shown an example of the service with its NotImplementedExceptions comments:
+
+[[img-cobigen]]
+image::images/ServiceExample.png["cobigen", width="800", link="images/ServiceExample.png]
+
+=== [navy]#Run the application#
+
+After doing all the steps defined avobe, open a terminal in path: *[Project_Name]/Devon4Net.Application.WebAPI* and then type:
 
 	dotnet run
 	
-This will deploy our application in our localhost with the port 8081, so when you click http://localhost:8081/swagger[here] (localhost:8081/swagger) you can see, in swagger, all the services and the data model.
-
-== [navy]#Finishing touches#
-
-After generating the files, locate the services and the repositories created in *Devon4Net.Business.Common*
-
-Services location:
-[[img-cobigen]]
-image::images/Services.png["cobigen", width="300", link="images/Services.png]
-
-Repositories location:
-[[img-cobigen]]
-image::images/Repositories.png["cobigen", width="300", link="images/Repositories.png]
+This will deploy our application in our localhost with the port 8081, so when you click https://localhost:8082/swagger/index.html[here] (https://localhost:8082/swagger) you can see, in swagger, all the services and the data model.
 
 
-Once you have find these you have to import them and add them into the _AddBusinessCommonDependencyInjectionService_ method found in *Bussiness/Devon4Net.Business.Common/Configuration/BusinessCommonConfiguration.cs*
+
+
+
 
 
 
