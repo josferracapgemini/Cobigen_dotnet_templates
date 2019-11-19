@@ -86,8 +86,14 @@ Ones you select all the files that you want to generate, click on the _“Finish
 
 In ordet to generate the files using the Cobigen CLI it is needed to do the following steps:
 
+1. Go to devonfw distribution folder
+2. Run *console.bat*, this will open a console.
+3. Go to the folder you downloaded the *devon4net template* and your *yml* file.
+4. Run the comman:
 
+	cobigen generate {yourOpenAPIFile}.yml
 
+5. A list of increments will be printed so that you can start the generation. It has to be selected *CRUD devon4net Server* increment.
 
 == [navy]#Configuration#
 
