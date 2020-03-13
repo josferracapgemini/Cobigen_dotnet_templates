@@ -16,6 +16,7 @@
     </increment>
     <increment name="application" description="Application">
         <templateRef ref="Startup.cs"/>
+        <templateRef ref="appsettings.Development.json"/>
         <templateRef ref="DevonConfiguration.cs"/>
     </increment>
     <increment name="domain" description="Domain">
@@ -26,6 +27,7 @@
     </increment>
     <increment name="dtos" description="DTO's">
         <templateRef ref="${variables.entityName#replace('Dto', '')#cap_first}Dto.cs"/>
+        <templateRef ref="${variables.entityName#replace('Dto', '')#cap_first}ResponseDto.cs"/>
     </increment>
     <increment name="controllers" description="Controllers">
         <templateRef ref= "${variables.component#cap_first}Controller.cs"/>

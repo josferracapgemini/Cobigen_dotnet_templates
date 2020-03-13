@@ -21,7 +21,7 @@ namespace Devon4Net.WebAPI.Implementation.Business.${variables.component?cap_fir
             _${variables.entityName?cap_first}Repository = uoW.Repository<I${variables.entityName?cap_first}Repository>();
         }
 
-        public async Task<${variables.entityName?cap_first}Dto> Get${variables.entityName?cap_first}ById(long id){
+        public async Task<${variables.entityName?cap_first}ResponseDto> Get${variables.entityName?cap_first}ById(long id){
 
             throw new NotImplementedException("TODO: Check the _${variables.entityName}Repository.Get${variables.entityName?cap_first}ById(id) input expression");
             
@@ -31,7 +31,7 @@ namespace Devon4Net.WebAPI.Implementation.Business.${variables.component?cap_fir
             //TODO: return value: convert ${variables.entityName?uncap_first} entity to ${variables.entityName?uncap_first}Dto
         }
 
-        public async Task<${variables.entityName?cap_first}Dto> Create${variables.entityName?cap_first}(${variables.entityName?cap_first}Dto ${variables.entityName?uncap_first}){
+        public async Task<${variables.entityName?cap_first}ResponseDto> Create${variables.entityName?cap_first}(${variables.entityName?cap_first}Dto ${variables.entityName?uncap_first}){
             
             throw new NotImplementedException("TODO: Check the _${variables.entityName}Repository.Set${variables.entityName?cap_first}() input expression");
             
@@ -56,7 +56,7 @@ namespace Devon4Net.WebAPI.Implementation.Business.${variables.component?cap_fir
             return await _${variables.entityName}Repository.Delete${variables.entityName?cap_first}ById(id).ConfigureAwait(false);
         }
 
-        public async Task<List<${variables.entityName?cap_first}Dto>> FindAll${variables.entityName?cap_first}s(Expression<Func<${variables.entityName?cap_first}, bool>> predicate = null)
+        public async Task<List<${variables.entityName?cap_first}ResponseDto>> FindAll${variables.entityName?cap_first}s(Expression<Func<${variables.entityName?cap_first}, bool>> predicate = null)
         {
             throw new NotImplementedException("TODO: Check the _${variables.entityName}Repository.Get${variables.entityName?cap_first}(predicate) input expression");
             
